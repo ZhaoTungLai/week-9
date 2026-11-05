@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A bilingual corpus explorer of English nominalizations rendered as Chinese verbs.">
+  <title>Nominal to Verb | Translation Corpus Explorer</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Nominal to Verb home">
+        <span class="brand-mark" aria-hidden="true">N→V</span>
+        <span class="brand-copy">
+          <strong data-i18n="brand">Nominal to Verb</strong>
+          <span data-i18n="tagline">A translation corpus explorer</span>
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="index.html" class="active" data-i18n="nav_explore">Explore</a>
+        <a href="report.html" data-i18n="nav_report">Learning report</a>
+        <a href="codebook.html" data-i18n="nav_codebook">Codebook</a>
+        <a href="ai-use.html" data-i18n="nav_ai">AI use</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-lang-switch="en" class="active">EN</button>
+          <button type="button" data-lang-switch="zh">繁中</button>
+        </div>
+        <a class="repo-link" href="https://github.com/ZhaoTungLai/week-9" target="_blank" rel="noopener" data-i18n="repo">Repository ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="eyebrow">Translation Technology · 2026R1</p>
+        <h1 data-i18n="title">When an English noun becomes a Chinese verb</h1>
+        <p class="hero-lead" data-i18n="lead">Explore 500 sampled subtitle pairs from OpenSubtitles v2024 and see how nominal ideas are often recast as actions in Chinese.</p>
+        <div class="hero-actions">
+          <a href="#explorer" class="button primary" data-i18n="start_exploring">Start exploring</a>
+          <a href="report.html" class="button secondary" data-i18n="read_method">Read the method</a>
+        </div>
+      </div>
+      <div class="hero-stat-card" aria-label="Corpus summary">
+        <div class="stat"><strong id="hero-count">500</strong><span data-i18n="stat_entries">sentence pairs</span></div>
+        <div class="stat"><strong id="hero-category-count">5</strong><span data-i18n="stat_categories">categories</span></div>
+        <div class="stat"><strong id="hero-seed">2026</strong><span data-i18n="stat_seed">random seed</span></div>
+        <p class="stat-note" data-i18n="stat_note">A fixed, reproducible sample—not hand-picked highlights.</p>
+      </div>
+    </section>
+
+    <section class="context-strip">
+      <div><span class="context-label" data-i18n="source_label">Source</span><strong>OpenSubtitles v2024</strong></div>
+      <div><span class="context-label" data-i18n="index_label">Indexed by</span><a href="https://nvatlas.tra.cuhk.edu.hk/" target="_blank" rel="noopener">NV Atlas ↗</a></div>
+      <div><span class="context-label" data-i18n="languages_label">Language pair</span><strong>English → 简体中文</strong></div>
+      <div><span class="context-label" data-i18n="review_label">Review status</span><strong data-i18n="machine_matched">Machine matched</strong></div>
+    </section>
+
+    <section id="explorer" class="explorer section">
+      <div class="section-heading">
+        <div><p class="eyebrow" data-i18n="explore_eyebrow">Corpus explorer</p><h2 data-i18n="explore_title">Follow the nominal</h2></div>
+        <p data-i18n="explore_intro">Search the sentence pair or term, narrow the view, then click a term or chart mark to keep following it.</p>
+      </div>
+
+      <div class="control-panel">
+        <label class="search-field" for="search">
+          <span data-i18n="search_label">Search sentence or term</span>
+          <span class="search-wrap"><input id="search" type="search" autocomplete="off" placeholder="e.g. attention, 注意, or 保护"><kbd>/</kbd></span>
+        </label>
+        <label class="select-field" for="category-filter"><span data-i18n="category_label">Category</span><select id="category-filter"><option value="" data-i18n="all_categories">All categories</option></select></label>
+        <label class="select-field" for="checked-filter"><span data-i18n="checked_label">Human checked</span><select id="checked-filter"><option value="" data-i18n="all_status">All statuses</option><option value="yes" data-i18n="checked_yes">Checked</option><option value="no" data-i18n="checked_no">Not yet checked</option></select></label>
+        <label class="select-field" for="sensitive-filter"><span data-i18n="sensitive_label">Sensitive content</span><select id="sensitive-filter"><option value="" data-i18n="all_content">All content</option><option value="no" data-i18n="show_safe">Hide sensitive</option><option value="yes" data-i18n="show_sensitive">Sensitive only</option></select></label>
+        <button type="button" id="clear-filters" class="button ghost" data-i18n="reset">Reset view</button>
+      </div>
+
+      <div class="filter-summary" aria-live="polite">
+        <span><strong id="result-count">500</strong> <span data-i18n="results">results</span></span>
+        <span id="active-filter-text" class="active-filter-text"></span>
+        <button type="button" id="copy-view" class="link-button" data-i18n="copy_view">Copy shareable view</button>
+      </div>
+
+      <div class="viz-grid">
+        <article class="viz-card viz-card-wide">
+          <div class="viz-head">
+            <div><p class="viz-kicker" data-i18n="viz_relational">Relational</p><h3 data-i18n="network_title">Term network</h3></div>
+            <div class="viz-controls">
+              <label><span data-i18n="top_terms">Show top terms</span><input id="network-limit" type="range" min="10" max="40" value="24" step="2"><output id="network-limit-value">24</output></label>
+              <label><span data-i18n="min_weight">Minimum link weight</span><input id="network-weight" type="range" min="1" max="8" value="2" step="1"><output id="network-weight-value">2</output></label>
+            </div>
+          </div>
+          <p class="caption" data-i18n="network_caption">Which source terms travel to more than one Chinese rendering?</p>
+          <div id="network-chart" class="chart network-chart" role="img" aria-label="Interactive network graph of English source terms and Chinese target terms"></div>
+          <p class="chart-hint" data-i18n="network_hint">Click a node to search both languages. Drag nodes to rearrange; scroll to zoom.</p>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-head"><div><p class="viz-kicker" data-i18n="viz_distributional">Distributional</p><h3 data-i18n="heatmap_title">Category × strategy</h3></div></div>
+          <p class="caption" data-i18n="heatmap_caption">Where do literal, alternative, and omitted renderings concentrate across the five categories?</p>
+          <div id="heatmap-chart" class="chart heatmap-chart" role="img" aria-label="Interactive heat map of category by translation strategy"></div>
+          <p class="chart-hint" data-i18n="heatmap_hint">Click a cell to filter by category and open that term.</p>
+        </article>
+
+        <article class="viz-card viz-card-wide">
+          <div class="viz-head">
+            <div><p class="viz-kicker" data-i18n="viz_lexical">Lexical</p><h3 data-i18n="kwic_title">Bilingual KWIC</h3></div>
+            <div class="viz-controls"><label><span data-i18n="context_limit">Contexts</span><input id="kwic-limit" type="range" min="5" max="30" value="12" step="1"><output id="kwic-limit-value">12</output></label></div>
+          </div>
+          <p class="caption" data-i18n="kwic_caption">How does the selected source nominal sit inside its original sentence and Chinese rendering?</p>
+          <div id="kwic-chart" class="chart kwic-chart" role="img" aria-label="Key word in context viewer"></div>
+          <p class="chart-hint" data-i18n="kwic_hint">Click an underlined source or target term to make it the active search.</p>
+        </article>
+
+        <article class="viz-card viz-card-wide">
+          <div class="viz-head">
+            <div><p class="viz-kicker" data-i18n="viz_tabular">Tabular</p><h3 data-i18n="table_title">Corpus table</h3></div>
+            <div class="viz-controls"><button type="button" id="export-csv" class="button small" data-i18n="export_csv">Export CSV</button></div>
+          </div>
+          <p class="caption" data-i18n="table_caption">Which individual rows support the patterns in the charts?</p>
+          <div class="table-wrap">
+            <table id="corpus-table">
+              <thead><tr>
+                <th><button type="button" data-sort="id" data-i18n="col_id">ID</button></th>
+                <th><button type="button" data-sort="key_term" data-i18n="col_term">English nominal</button></th>
+                <th><button type="button" data-sort="target_term" data-i18n="col_target">Chinese verb</button></th>
+                <th><button type="button" data-sort="category" data-i18n="col_category">Category</button></th>
+                <th><button type="button" data-sort="source_text" data-i18n="col_source">Source sentence</button></th>
+                <th><button type="button" data-sort="target_text" data-i18n="col_translation">Chinese sentence</button></th>
+                <th><button type="button" data-sort="human_checked" data-i18n="col_checked">Checked</button></th>
+              </tr></thead>
+              <tbody id="table-body"></tbody>
+            </table>
+          </div>
+          <div class="table-footer"><span id="table-range"></span><div class="pager"><button type="button" id="prev-page" class="button small ghost" data-i18n="previous">Previous</button><button type="button" id="next-page" class="button small ghost" data-i18n="next">Next</button></div></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reading-note">
+      <div>
+        <p class="eyebrow" data-i18n="reading_eyebrow">How to read this</p>
+        <h2 data-i18n="reading_title">A pattern, not a proof of causation</h2>
+      </div>
+      <p data-i18n="reading_body">The sample shows recurring nominal-to-verbal shifts, but subtitle translation also reflects timing, dialogue rhythm, and the choices of unknown translators. The site treats category labels as an interpretable first pass and keeps verification status visible.</p>
+      <a href="report.html" class="text-link" data-i18n="read_full_report">Read the full learning report →</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div><strong>Nominal to Verb</strong><span data-i18n="footer_course">Translation Technology in the Age of AI · 2026R1</span></div>
+    <p data-i18n="footer_credit">Source data: OpenSubtitles v2024, indexed by NV Atlas, CUHK. Sample method and limitations are documented in the report.</p>
+    <p><a href="codebook.html" data-i18n="footer_codebook">Codebook</a> · <a href="ai-use.html" data-i18n="footer_ai">AI use declaration</a></p>
+  </footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Codebook | Nominal to Verb</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html"><span class="brand-mark">N→V</span><span class="brand-copy"><strong data-i18n="brand">Nominal to Verb</strong><span data-i18n="tagline">A translation corpus explorer</span></span></a>
+      <nav class="main-nav" aria-label="Primary navigation"><a href="index.html" data-i18n="nav_explore">Explore</a><a href="report.html" data-i18n="nav_report">Learning report</a><a href="codebook.html" class="active" data-i18n="nav_codebook">Codebook</a><a href="ai-use.html" data-i18n="nav_ai">AI use</a></nav>
+      <div class="header-actions"><div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang-switch="en" class="active">EN</button><button type="button" data-lang-switch="zh">繁中</button></div><a class="repo-link" href="https://github.com/ZhaoTungLai/week-9" target="_blank" rel="noopener" data-i18n="repo">Repository ↗</a></div>
+    </div>
+  </header>
+  <main id="main" class="page-shell">
+    <header class="page-intro compact-intro"><p class="eyebrow" data-i18n="codebook_eyebrow">Classification</p><h1 data-i18n="codebook_title">Codebook</h1><p class="lede" data-i18n="codebook_lede">Five categories for classifying the semantic role of an English nominalization and its Chinese verbal rendering.</p></header>
+    <article class="longform">
+      <section class="intro-section"><p data-i18n="codebook_intro">Each entry receives one category based on the English nominal selected by NV Atlas. The category describes the main kind of process named by the nominal, not the grammatical form of the Chinese sentence. Rules are applied in the order shown. A term that meets more than one rule goes to the earliest category.</p></section>
+      <section class="category-card" id="institutional">
+        <div class="category-top"><span class="category-chip institutional">01</span><h2 data-i18n="cat_inst_title">Institutional procedure</h2></div>
+        <p><strong data-i18n="definition_label">Definition.</strong> <span data-i18n="cat_inst_def">A nominalization that names an action regulated by an institution, legal process, public office, or formal organization.</span></p>
+        <p><strong data-i18n="theory_label">Theory source.</strong> <span data-i18n="cat_inst_theory">Institutional discourse and genre analysis; the category draws on the idea that recurring institutional genres stabilize particular action nouns.</span></p>
+        <p><strong data-i18n="rule_label">Decision rule.</strong> <span data-i18n="cat_inst_rule">Choose this when the nominal denotes appointment, authorization, punishment, legal process, employment status, or a formal transaction, even if it also refers to speech or affect.</span></p>
+        <div class="example-pair"><div><span class="example-label" data-i18n="positive_label">Positive</span><code>permission → 允许</code></div><div><span class="example-label" data-i18n="negative_label">Negative</span><code>admiration → 欣赏</code></div></div>
+        <p class="boundary"><strong data-i18n="boundary_label">Boundary case.</strong> <span data-i18n="cat_inst_boundary">An <em>examination</em> can be a speech event, but if the context is a formal medical or legal procedure, it belongs here; a classroom discussion remains speech/cognition.</span></p>
+      </section>
+      <section class="category-card" id="speech">
+        <div class="category-top"><span class="category-chip speech">02</span><h2 data-i18n="cat_speech_title">Speech & cognition</h2></div>
+        <p><strong data-i18n="definition_label">Definition.</strong> <span data-i18n="cat_speech_def">A nominalization that names communication, interpretation, thought, memory, perception, or a mental decision.</span></p>
+        <p><strong data-i18n="theory_label">Theory source.</strong> <span data-i18n="cat_speech_theory">Cognitive semantics and pragmatics; meaning is treated as a construal of an event rather than a fixed word-to-word mapping.</span></p>
+        <p><strong data-i18n="rule_label">Decision rule.</strong> <span data-i18n="cat_speech_rule">Choose this when the English term primarily concerns saying, asking, understanding, remembering, judging, or choosing. It must not have priority as an institutional procedure.</span></p>
+        <div class="example-pair"><div><span class="example-label" data-i18n="positive_label">Positive</span><code>explanation → 解释</code></div><div><span class="example-label" data-i18n="negative_label">Negative</span><code>payment → 付钱</code></div></div>
+        <p class="boundary"><strong data-i18n="boundary_label">Boundary case.</strong> <span data-i18n="cat_speech_boundary"><em>Confession</em> can be religious speech or a police procedure; the broad label remains speech/cognition unless the entry explicitly refers to a formal legal charge.</span></p>
+      </section>
+      <section class="category-card" id="affect">
+        <div class="category-top"><span class="category-chip affect">03</span><h2 data-i18n="cat_affect_title">Affect & embodiment</h2></div>
+        <p><strong data-i18n="definition_label">Definition.</strong> <span data-i18n="cat_affect_def">A nominalization that names an emotion, bodily process, health event, or physical experience of a person.</span></p>
+        <p><strong data-i18n="theory_label">Theory source.</strong> <span data-i18n="cat_affect_theory">Embodiment and experiential semantics; emotions and bodily events are treated as processes experienced by a participant.</span></p>
+        <p><strong data-i18n="rule_label">Decision rule.</strong> <span data-i18n="cat_affect_rule">Choose this for feelings and bodily/medical processes such as <em>dance</em>, <em>cure</em>, <em>infection</em>, or <em>disappointment</em>, unless an institutional rule clearly applies.</span></p>
+        <div class="example-pair"><div><span class="example-label" data-i18n="positive_label">Positive</span><code>dance → 跳舞</code></div><div><span class="example-label" data-i18n="negative_label">Negative</span><code>election → 选举</code></div></div>
+        <p class="boundary"><strong data-i18n="boundary_label">Boundary case.</strong> <span data-i18n="cat_affect_boundary"><em>Treatment</em> can be a medical process or an interpersonal action. The medical sense goes here; repeated mistreatment is material action.</span></p>
+      </section>
+      <section class="category-card" id="relation">
+        <div class="category-top"><span class="category-chip relation">04</span><h2 data-i18n="cat_relation_title">Social relation</h2></div>
+        <p><strong data-i18n="definition_label">Definition.</strong> <span data-i18n="cat_relation_def">A nominalization that names a state, role, connection, position, or relation between people, institutions, or things.</span></p>
+        <p><strong data-i18n="theory_label">Theory source.</strong> <span data-i18n="cat_relation_theory">Systemic functional linguistics; relational processes connect participants rather than primarily describing an action or mental state.</span></p>
+        <p><strong data-i18n="rule_label">Decision rule.</strong> <span data-i18n="cat_relation_rule">Choose this for presence, protection, assistance, possession, position, membership, and similar terms. It applies after the higher-priority institutional and speech rules.</span></p>
+        <div class="example-pair"><div><span class="example-label" data-i18n="positive_label">Positive</span><code>protection → 保护</code></div><div><span class="example-label" data-i18n="negative_label">Negative</span><code>destruction → 毁灭</code></div></div>
+        <p class="boundary"><strong data-i18n="boundary_label">Boundary case.</strong> <span data-i18n="cat_relation_boundary"><em>Assistance</em> can be an action, but its main function is a relation of support between participants; it stays social relation.</span></p>
+      </section>
+      <section class="category-card" id="material">
+        <div class="category-top"><span class="category-chip material">05</span><h2 data-i18n="cat_material_title">Material action</h2></div>
+        <p><strong data-i18n="definition_label">Definition.</strong> <span data-i18n="cat_material_def">A nominalization that names a concrete event, physical action, movement, change, or use of force.</span></p>
+        <p><strong data-i18n="theory_label">Theory source.</strong> <span data-i18n="cat_material_theory">Systemic functional linguistics; material processes are doings and happenings in the physical world.</span></p>
+        <p><strong data-i18n="rule_label">Decision rule.</strong> <span data-i18n="cat_material_rule">Choose this as the residual category when the nominal describes a concrete action or event and does not meet the institutional, speech, affect, or relation rules.</span></p>
+        <div class="example-pair"><div><span class="example-label" data-i18n="positive_label">Positive</span><code>destruction → 毁灭</code></div><div><span class="example-label" data-i18n="negative_label">Negative</span><code>presence → 出现</code></div></div>
+        <p class="boundary"><strong data-i18n="boundary_label">Boundary case.</strong> <span data-i18n="cat_material_boundary"><em>Invasion</em> is a military action; it is placed here unless the entry explicitly names a political or legal proceeding.</span></p>
+      </section>
+      <section class="rule-summary"><h2 data-i18n="rule_summary_title">Application order</h2><ol><li data-i18n="order_inst">Institutional procedure</li><li data-i18n="order_speech">Speech & cognition</li><li data-i18n="order_affect">Affect & embodiment</li><li data-i18n="order_relation">Social relation</li><li data-i18n="order_material">Material action</li></ol><p data-i18n="rule_summary_body">When a term could fit two categories, use the earliest matching category. Every category assignment is recorded in <code>data/corpus.csv</code>, and the full build rules are in <code>scripts/build_corpus.py</code>.</p></section>
+    </article>
+    <nav class="page-next" aria-label="Related pages"><a href="report.html" data-i18n="back_report">← Learning report</a><a href="index.html" data-i18n="back_explore">Explore the corpus →</a></nav>
+  </main>
+  <footer class="site-footer"><div><strong>Nominal to Verb</strong><span data-i18n="footer_course">Translation Technology in the Age of AI · 2026R1</span></div><p data-i18n="footer_credit">Source data: OpenSubtitles v2024, indexed by NV Atlas, CUHK. Sample method and limitations are documented in the report.</p><p><a href="codebook.html" data-i18n="footer_codebook">Codebook</a> · <a href="ai-use.html" data-i18n="footer_ai">AI use declaration</a></p></footer>
+  <script src="js/i18n.js"></script><script src="js/pages.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning Report | Nominal to Verb</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html"><span class="brand-mark">N→V</span><span class="brand-copy"><strong data-i18n="brand">Nominal to Verb</strong><span data-i18n="tagline">A translation corpus explorer</span></span></a>
+      <nav class="main-nav" aria-label="Primary navigation"><a href="index.html" data-i18n="nav_explore">Explore</a><a href="report.html" class="active" data-i18n="nav_report">Learning report</a><a href="codebook.html" data-i18n="nav_codebook">Codebook</a><a href="ai-use.html" data-i18n="nav_ai">AI use</a></nav>
+      <div class="header-actions"><div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang-switch="en" class="active">EN</button><button type="button" data-lang-switch="zh">繁中</button></div><a class="repo-link" href="https://github.com/ZhaoTungLai/week-9" target="_blank" rel="noopener" data-i18n="repo">Repository ↗</a></div>
+    </div>
+  </header>
+  <main id="main" class="page-shell">
+    <header class="page-intro">
+      <p class="eyebrow" data-i18n="report_eyebrow">Learning report</p>
+      <h1 data-i18n="report_title">The noun that becomes an action</h1>
+      <p class="lede" data-i18n="report_lede">A study of English nominalizations and their Chinese verbal renderings in a 500-pair subtitle sample.</p>
+      <div class="byline"><span data-i18n="report_byline">Translation Technology in the Age of AI · 2026R1</span><span aria-hidden="true">·</span><span data-i18n="report_date">5 December 2026</span></div>
+    </header>
+
+    <article class="longform" data-i18n-html>
+      <section id="origin">
+        <p class="section-number">01</p>
+        <h2 data-i18n="origin_title">Origin</h2>
+        <p data-i18n="origin_p1">I chose this topic because it makes a familiar translation intuition visible: English often packages an action as a noun, while Chinese more readily expresses that action as a verb. The NV Atlas project supplied a useful bridge between the two languages by pairing an English nominalization with the Chinese verb used in the same subtitle line.</p>
+        <p data-i18n="origin_p2">The existing CSV already contained 500 pairs, but the assignment asks for a traceable, reproducible sample. I therefore treated the public NV Atlas search index as the sampling frame and rebuilt the sample from its underlying sentence records rather than presenting the first 500 rows as representative.</p>
+      </section>
+
+      <section id="background">
+        <p class="section-number">02</p>
+        <h2 data-i18n="background_title">Background</h2>
+        <p data-i18n="background_p1">The topic sits between morphology and translation strategy. Nominalization turns a process into an entity: <em>decide</em> becomes <em>decision</em>, and <em>protect</em> becomes <em>protection</em>. Chinese can also nominalize, but subtitle dialogue often favors compact verb phrases such as 决定 and 保护 because they fit the rhythm of spoken exchange.</p>
+        <p data-i18n="background_p2">NV Atlas frames this as English nominalization versus Chinese verbal usage. Its public corpus is derived from OpenSubtitles v2024, an English–Simplified Chinese parallel subtitle collection. That makes it possible to ask a narrow question with observable data: when the same English nominal recurs, does Chinese keep a stable equivalent or choose a different verb for the situation?</p>
+      </section>
+
+      <section id="gap">
+        <p class="section-number">03</p>
+        <h2 data-i18n="gap_title">Gap</h2>
+        <p data-i18n="gap_p1">Most learner-facing examples show a single “correct” equivalent: <em>permission</em> = 允许, <em>protection</em> = 保护. That presentation hides variation. A translator also needs to know whether a rendering is compact, expanded, or absent, and whether the surrounding dialogue changes the choice.</p>
+        <p data-i18n="gap_p2">Existing atlas interfaces are powerful, but they are designed for broad exploration rather than a small assignment with an explicit sampling audit. This project fills that gap by combining a fixed-seed corpus, a compact bilingual codebook, linked views, and a visible distinction between machine matching and human verification.</p>
+      </section>
+
+      <section id="questions">
+        <p class="section-number">04</p>
+        <h2 data-i18n="questions_title">Questions</h2>
+        <ol class="question-list">
+          <li data-i18n="question_1">Which English nominalizations recur most often in the sample, and how many Chinese renderings do they receive?</li>
+          <li data-i18n="question_2">Do the five semantic categories favor compact verbs or expanded verbal phrases?</li>
+          <li data-i18n="question_3">How often does the nominal’s term disappear from the Chinese sentence, and what does that imply for term-level analysis?</li>
+          <li data-i18n="question_4">Can a reproducible sample and transparent interface make the uncertainty easier to see?</li>
+        </ol>
+      </section>
+
+      <section id="method">
+        <p class="section-number">05</p>
+        <h2 data-i18n="method_title">Method</h2>
+        <p data-i18n="method_p1">The sampling frame was the embedded public index on the NV Atlas search page, retrieved on 5 November 2026. It contains 20,965 unique sentence pairs. I applied the following eligibility rules before sampling: both sides non-empty; a sentence ID present; English contains a Latin letter; Chinese contains a Han character; English length 10–240 characters; Chinese length 1–240 characters; and no exact duplicate source–target pair. This produced 20,785 eligible records; 178 were rejected for English length and 2 for Chinese length.</p>
+        <p data-i18n="method_p2">I used Python’s random.Random(2026).sample over the eligible list and selected one NV Atlas term pair from each sampled sentence. The result is 500 entries, each retaining its original sentence ID and a direct source URL. Random sampling avoids choosing examples for rhetorical convenience, but it does not guarantee proportional representation across genres or films; the public index does not expose enough metadata for that claim.</p>
+        <div class="metric-row" aria-label="Corpus metrics">
+          <div><strong>20,965</strong><span data-i18n="metric_index">source records</span></div><div><strong>20,785</strong><span data-i18n="metric_eligible">eligible records</span></div><div><strong>500</strong><span data-i18n="metric_sample">sampled entries</span></div><div><strong>2026</strong><span data-i18n="metric_seed">fixed seed</span></div>
+        </div>
+
+        <h3 data-i18n="codebook_log_title">Codebook test and change log</h3>
+        <p data-i18n="codebook_log_p1">I first tested a four-category scheme: institutional regulation, speech/cognition, state/relation, and material action. The pilot showed that a suffix rule over-classified concrete event nouns. For example, <em>dance</em> was being treated as an abstract relation even though it names an embodied activity. I revised the scheme to five categories, moved affect and embodiment into their own group, used an explicit override list for concrete events, and added a boundary rule: institutional use takes priority, then speech/cognition, then affect/embodiment, then social relation, then material action.</p>
+        <p data-i18n="codebook_log_p2">The category labels were assigned by deterministic rules on NV Atlas’s selected English nominal. They are an interpretive first pass, not a claim that every row has been manually adjudicated. The accompanying 50-row review queue was selected with the same seed for a later human spot check.</p>
+
+        <h3 data-i18n="review_title">Human verification status</h3>
+        <p data-i18n="review_p1">All 500 rows are marked <strong>human_checked = no</strong>. This is deliberate: the build can verify that each row matches the public index, but it cannot substitute for a person comparing the row with the original subtitle record. The site must not present machine matching as human checking.</p>
+        <p data-i18n="review_p2">To complete the assignment’s quality check, open <code>data/verification-sample.csv</code>, compare each of the 50 rows with its source URL, correct any mismatch, and set both the main corpus and the review file to <code>human_checked = yes</code> for verified entries. The report currently reports zero human-verified rows, zero claimed corrections, and a limitation rather than a fabricated result.</p>
+      </section>
+
+      <section id="analysis">
+        <p class="section-number">06</p>
+        <h2 data-i18n="analysis_title">Analysis</h2>
+        <p data-i18n="analysis_p1"><strong>Term network.</strong> The network asks which source terms travel to more than one Chinese rendering. In the unfiltered 500-row view, 244 distinct English nominals map to 314 distinct Chinese terms. The most frequent nominal, <em>attention</em> (20 rows), has three renderings: 注意, 稍息, and 关注. <em>Destruction</em> (10 rows) is more dispersed, with six renderings: 破坏, 摧毁, 消灭, 毁灭, 灭亡, and 毁损. This is the central pattern: a shared English nominal does not imply a fixed Chinese equivalent.</p>
+        <figure class="report-figure"><img src="assets/network-preview.svg" alt="A diagram showing source nominals connected to multiple Chinese renderings"><figcaption data-i18n="analysis_fig1">The network’s question is contextual variation, not semantic equivalence. Counts are computed from the same filtered rows as the data grid.</figcaption></figure>
+
+        <p data-i18n="analysis_p2"><strong>Category × verb form heat map.</strong> Compact Chinese verbs dominate almost every category: 495 of 500 term pairs have a target term of one or two Han characters, while only five use an expanded phrase. The heat map is therefore a check on a plausible but weak hypothesis. It does not show that category causes compactness; it shows that the current term inventory is highly compressed and that expanded verbalization is rare in this sample.</p>
+        <p data-i18n="analysis_p3"><strong>Bilingual KWIC.</strong> The KWIC view asks how the nominal behaves in context. It exposes two problems that a simple bilingual list hides. First, the selected target term may not appear literally in the Chinese sentence; the term inventory sometimes records a broader translation relation. Second, dialogue context can change the verb even when the English noun is identical. Clicking a highlighted term carries the term into the search field and the URL, which makes a specific observation shareable.</p>
+        <p data-i18n="analysis_p4"><strong>Corpus table.</strong> The table asks which individual rows support the patterns in the charts. Sorting, search, category/status filters, and CSV export operate on the same filtered collection. The table is not a decorative appendix: it makes every chart number inspectable and preserves the original sentence ID for tracing.</p>
+
+        <div class="finding-box">
+          <p class="eyebrow" data-i18n="finding_eyebrow">Main finding</p>
+          <h3 data-i18n="finding_title">Recurrence is not stability</h3>
+          <p data-i18n="finding_body">Frequent English nominalizations recur across the corpus, but their Chinese renderings vary with context. A corpus explorer should therefore show distribution and co-text, not just a single dictionary-style equivalent.</p>
+        </div>
+      </section>
+
+      <section id="conclusion">
+        <p class="section-number">07</p>
+        <h2 data-i18n="conclusion_title">Conclusion</h2>
+        <p data-i18n="conclusion_p1">The project achieved a working static corpus explorer with 500 traceable entries, search, two required filters plus a sensitivity filter, three linked visualization families, a sortable/exportable data grid, a bilingual interface, and a published codebook. The main analytical result is that recurrent English nominalizations are translated with variable Chinese verbs rather than stable one-to-one equivalents.</p>
+        <p data-i18n="conclusion_p2">The conclusion should remain modest. The sample is drawn from a public index whose genre and translator metadata are not exposed, so the study cannot attribute variation to a specific translator, film, or period. It also cannot claim that every term relation is semantically exact. What it can show is a reproducible distribution and a method for checking individual cases against source records.</p>
+      </section>
+
+      <section id="reflection">
+        <p class="section-number">08</p>
+        <h2 data-i18n="reflection_title">Reflection</h2>
+        <p data-i18n="reflection_p1">The hardest part was not drawing a chart; it was resisting the temptation to make a cleaner story than the data supports. The original CSV looked complete until the required fields, sampling method, and human-check distinction were considered. Rebuilding the sample exposed how easily a plausible dataset can drift from the assignment’s evidentiary standards.</p>
+        <p data-i18n="reflection_p2">I learned to treat AI output as a draft that needs source-level inspection. A useful prompt was to ask for a reproducible build that records every filter and rejection count, and another was to ask for the interface to distinguish machine matching from human checking. AI was effective at generating code, organizing the report, and producing a first-pass taxonomy; it could not perform the required human spot check, decide subtle category boundaries with full confidence, or verify the copyright status of the underlying subtitle collection.</p>
+      </section>
+    </article>
+
+    <nav class="page-next" aria-label="Related pages"><a href="index.html" data-i18n="back_explore">← Back to the explorer</a><a href="codebook.html" data-i18n="read_codebook">Read the codebook →</a></nav>
+  </main>
+  <footer class="site-footer"><div><strong>Nominal to Verb</strong><span data-i18n="footer_course">Translation Technology in the Age of AI · 2026R1</span></div><p data-i18n="footer_credit">Source data: OpenSubtitles v2024, indexed by NV Atlas, CUHK. Sample method and limitations are documented in the report.</p><p><a href="codebook.html" data-i18n="footer_codebook">Codebook</a> · <a href="ai-use.html" data-i18n="footer_ai">AI use declaration</a></p></footer>
+  <script src="js/i18n.js"></script><script src="js/pages.js"></script>
+</body>
+</html>

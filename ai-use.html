@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Use Declaration | Nominal to Verb</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html"><span class="brand-mark">N→V</span><span class="brand-copy"><strong data-i18n="brand">Nominal to Verb</strong><span data-i18n="tagline">A translation corpus explorer</span></span></a>
+      <nav class="main-nav" aria-label="Primary navigation"><a href="index.html" data-i18n="nav_explore">Explore</a><a href="report.html" data-i18n="nav_report">Learning report</a><a href="codebook.html" data-i18n="nav_codebook">Codebook</a><a href="ai-use.html" class="active" data-i18n="nav_ai">AI use</a></nav>
+      <div class="header-actions"><div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang-switch="en" class="active">EN</button><button type="button" data-lang-switch="zh">繁中</button></div><a class="repo-link" href="https://github.com/ZhaoTungLai/week-9" target="_blank" rel="noopener" data-i18n="repo">Repository ↗</a></div>
+    </div>
+  </header>
+  <main id="main" class="page-shell">
+    <header class="page-intro compact-intro"><p class="eyebrow" data-i18n="ai_eyebrow">Transparency</p><h1 data-i18n="ai_title">AI use declaration</h1><p class="lede" data-i18n="ai_lede">What the assistant did, what remains a human responsibility, and where the process needed correction.</p></header>
+    <article class="longform declaration-grid">
+      <section><p class="section-number">01</p><h2 data-i18n="ai_tools_title">Tools and model</h2><p data-i18n="ai_tools_p">I used Codex, an OpenAI coding assistant, in the Codex desktop app. I also consulted the public NV Atlas site and the OpenSubtitles corpus attribution documented there. The assistant did not have direct access to the private submission account or course portal.</p></section>
+      <section><p class="section-number">02</p><h2 data-i18n="ai_tasks_title">What AI was asked to do</h2><p data-i18n="ai_tasks_p">AI was asked to read the project brief, identify the requirements, inspect the existing CSV, retrieve the public NV Atlas index, implement a reproducible sample builder, design and code the static site, draft bilingual interface text, draft the learning report and codebook, and run structural checks on the result.</p></section>
+      <section><p class="section-number">03</p><h2 data-i18n="ai_human_title">What I did and checked</h2><p data-i18n="ai_human_p">I supplied the project brief and the existing CSV, selected the translation topic and source direction, and reviewed the resulting site. The required human spot check is still outstanding: all 500 entries remain marked <code>human_checked = no</code> until a person compares the 50-row verification sample with the source records. Human checking cannot be delegated to the assistant.</p></section>
+      <section><p class="section-number">04</p><h2 data-i18n="ai_prompt_title">Prompts that worked</h2><div class="prompt-card"><code>“Read the attached project brief and inspect the existing corpus. Build a static GitHub Pages explorer with a reproducible sampling method, linked visualizations, URL state, a bilingual interface, and a learning report.”</code></div><div class="prompt-card"><code>“Show which required fields are missing and distinguish machine-matched rows from rows that a human has actually verified. Do not claim human verification we have not done.”</code></div></section>
+      <section><p class="section-number">05</p><h2 data-i18n="ai_wrong_title">Where AI went wrong</h2><p data-i18n="ai_wrong_p">The first draft treated the existing 500-row CSV as if it already met the brief. It did not: the CSV lacked the required source, category, and human-check fields, and it was a sequential set rather than a documented random sample. The assistant also initially over-classified terms such as <em>dance</em> through a suffix rule. Both problems were caught by comparing the draft against the brief and by inspecting the category examples; the sample builder and taxonomy were revised accordingly.</p></section>
+      <section><p class="section-number">06</p><h2 data-i18n="ai_limits_title">Limits</h2><p data-i18n="ai_limits_p">AI could draft code and prose quickly, but it could not decide the final category for every ambiguous entry, verify 50 rows by eye, establish copyright permission beyond the source’s stated attribution, or guarantee that the public index is representative of all subtitles. Those remain human and source-level decisions.</p></section>
+    </article>
+    <nav class="page-next" aria-label="Related pages"><a href="report.html" data-i18n="back_report">← Learning report</a><a href="index.html" data-i18n="back_explore">Explore the corpus →</a></nav>
+  </main>
+  <footer class="site-footer"><div><strong>Nominal to Verb</strong><span data-i18n="footer_course">Translation Technology in the Age of AI · 2026R1</span></div><p data-i18n="footer_credit">Source data: OpenSubtitles v2024, indexed by NV Atlas, CUHK. Sample method and limitations are documented in the report.</p><p><a href="codebook.html" data-i18n="footer_codebook">Codebook</a> · <a href="ai-use.html" data-i18n="footer_ai">AI use declaration</a></p></footer>
+  <script src="js/i18n.js"></script><script src="js/pages.js"></script>
+</body>
+</html>
