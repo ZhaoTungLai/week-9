@@ -1,0 +1,38 @@
+{
+  "title": "English nominalizations rendered as Chinese verbs",
+  "source_index": "https://nvatlas.tra.cuhk.edu.hk/search.html",
+  "underlying_corpus": "OpenSubtitles v2024, en-zh_CN",
+  "source_page_sha256": "f11c3c1b9cf2719ddbc6601cf95de5557198f118ed9e877de669aec9359c11e6",
+  "retrieved": "2026-11-05",
+  "seed": 2026,
+  "sample_size": 500,
+  "source_records": 20965,
+  "eligible_records": 20785,
+  "sample_population": 20785,
+  "candidates_rejected": {
+    "source length 10-240": 178,
+    "target length 1-240": 2
+  },
+  "filter_rules": [
+    "both source and target non-empty",
+    "at least one sentence ID present",
+    "English contains a Latin letter",
+    "Chinese contains a Han character",
+    "English length 10-240 characters",
+    "Chinese length 1-240 characters",
+    "exact duplicate source-target pairs removed"
+  ],
+  "sampling": "Python random.Random(2026).sample over the eligible list; one term pair per sampled sentence pair.",
+  "category_counts": {
+    "speech_cognition": 101,
+    "affect_embodiment": 61,
+    "institutional_procedure": 72,
+    "material_action": 200,
+    "social_relation": 66
+  },
+  "sensitive_entries": 21,
+  "human_checked_entries": 0,
+  "machine_matched_entries": 500,
+  "verification_sample_size": 50,
+  "verification_note": "The 50-row file is a review queue, not evidence of human verification."
+}
